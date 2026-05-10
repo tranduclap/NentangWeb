@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh toán đơn hàng</title>
+</head>
+<body>
+
+    <header>
+        <h1>Xác nhận đặt hàng</h1>
+    </header>
+
+    <section>
+        <label for="product-search">Tìm thêm sản phẩm:</label>
+        <input type="text" id="product-search" list="product-list" placeholder="Nhập tên sản phẩm...">
+        <datalist id="product-list">
+            <option value="iPhone 16 Pro Max">
+            <option value="MacBook Pro M4">
+            <option value="Apple Watch Series 10">
+            <option value="AirPods Pro 2">
+            <option value="iPad Pro M2">
+        </datalist>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Chi tiết giỏ hàng</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>iPhone 16 Pro Max</td>
+                    <td>34.990.000đ</td>
+                    <td>1</td>
+                    <td>34.990.000đ</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Ốp lưng Silicon</td>
+                    <td>1.290.000đ</td>
+                    <td>2</td>
+                    <td>2.580.000đ</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Củ sạc 20W</td>
+                    <td>590.000đ</td>
+                    <td>1</td>
+                    <td>590.000đ</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" align="right"><strong>Tổng cộng:</strong></td>
+                    <td>
+                        <strong>
+                            <!-- Nâng cao: output -->
+                            <output name="total">38.160.000đ</output>
+                        </strong>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <p>
+            Mức ưu đãi Freeship: 
+            <progress value="80" max="100"></progress> 80%
+        </p>
+    </section>
+
+    <hr>
+
+    <form action="#" method="POST">
+        
+        <section>
+            <h2>Phương thức thanh toán</h2>
+            <p>
+                <input type="radio" id="cod" name="payment" value="cod" checked>
+                <label for="cod">Thanh toán khi nhận hàng (COD)</label><br>
+
+                <input type="radio" id="bank" name="payment" value="bank">
+                <label for="bank">Chuyển khoản ngân hàng</label><br>
+
+                <input type="radio" id="wallet" name="payment" value="wallet">
+                <label for="wallet">Ví điện tử (Momo/ZaloPay)</label>
+            </p>
+
+            <p>
+                <label for="coupon">Mã giảm giá:</label><br>
+                <input type="text" id="coupon" name="coupon" 
+                       pattern="SALE[0-9]{4}" 
+                       placeholder="VD: SALE2026">
+                <small>(Định dạng: SALE + 4 chữ số)</small>
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Thông tin giao hàng</h2>
+            
+            <p>
+                <label for="delivery-date">Ngày giao hàng mong muốn:</label><br>
+                <!-- Ngày mai so với mốc 2026-05-10 là 2026-05-11 -->
+                <input type="date" id="delivery-date" name="delivery-date" 
+                       min="2026-05-11" required>
+            </p>
+
+            <p>
+                <label for="delivery-time">Khung giờ giao hàng:</label><br>
+                <select id="delivery-time" name="delivery-time" required>
+                    <option value="">-- Chọn khung giờ --</option>
+                    <option value="morning">Sáng 8h-12h</option>
+                    <option value="afternoon">Chiều 14h-18h</option>
+                    <option value="evening">Tối 18h-21h</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="shipping-speed">Số ngày giao hàng dự kiến (1-7 ngày):</label><br>
+                <input type="range" id="shipping-speed" name="shipping-speed" 
+                       min="1" max="7" step="1" value="3">
+            </p>
+
+            <p>
+                <label for="order-note">Ghi chú đơn hàng:</label><br>
+                <textarea id="order-note" name="order-note" rows="4" cols="50" 
+                          placeholder="Lưu ý về địa chỉ hoặc người nhận..."></textarea>
+            </p>
+        </section>
+
+        <section>
+            <p>
+                Điểm tích lũy của bạn: 
+                <meter value="450" min="0" max="1000" low="200" high="800" optimum="900"></meter>
+                (450/1000 điểm)
+            </p>
+        </section>
+
+        <p>
+            <button type="submit" aria-label="Xác nhận đặt hàng">Xác nhận đặt hàng</button>
+        </p>
+
+    </form>
+
+    <footer>
+        <p>&copy; 2026 - Hệ thống thanh toán E-Commerce</p>
+    </footer>
+
+</body>
+</html>
