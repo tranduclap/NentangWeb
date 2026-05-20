@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm chứng kết quả CSS Selectors</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; line-height: 1.5; }
+        .test-zone { border: 2px dashed #bbb; padding: 15px; margin-bottom: 20px; background-color: #f8fafc; }
+        /* CSS mô phỏng trạng thái được khoanh vùng chọn để chụp ảnh */
+        .highlight-selected {
+            background-color: #fef08a !important; /* Màu nền vàng */
+            border: 2px solid #dc2626 !important;   /* Viền đỏ */
+            padding: 2px 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Khu vực thực nghiệm cấu trúc DOM</h1>
+    
+    <!-- Giữ nguyên cấu trúc HTML gốc của đề bài trong phân vùng test -->
+    <div id="app" class="test-zone">
+        <header class="top-bar dark">
+            <h1>ShopTLU</h1>
+            <nav>
+                <a href="/" class="active">Home</a>
+                <a href="/products">Products</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+        <main>
+            <article class="product">
+                <h2>iPhone 16</h2>
+                <p class="price">25.990.000đ</p>
+                <p>Mô tả sản phẩm...</p>
+            </article>
+            <article class="product featured">
+                <h2>MacBook Pro</h2>
+                <p class="price">45.990.000đ</p>
+                <p>Mô tả sản phẩm...</p>
+            </article>
+        </main>
+    </div>
+
+    <h2>Bảng điều khiển kiểm chứng nhanh</h2>
+    <p>Nhấp vào từng nút dưới đây để xem trình duyệt làm nổi bật (viền đỏ nền vàng) các phần tử tương ứng với selector đó:</p>
+    
+    <button onclick="testSelector('h1')">Thử Selector 1: h1</button>
+    <button onclick="testSelector('.price')">Thử Selector 2: .price</button>
+    <button onclick="testSelector('#app header')">Thử Selector 3: #app header</button>
+    <button onclick="testSelector('nav a:first-child')">Thử Selector 4: nav a:first-child</button>
+    <button onclick="testSelector('.product.featured h2')">Thử Selector 5: .product.featured h2</button>
+    <button onclick="testSelector('article > p')">Thử Selector 6: article > p</button>
+    <button onclick="testSelector('a[href=\&quot;/\&quot;]')">Thử Selector 7: a[href="/"]</button>
+    <button onclick="testSelector('.top-bar.dark h1')">Thử Selector 8: .top-bar.dark h1</button>
+
+    <script>
+        function testSelector(selectorString) {
+            // Xóa bỏ tất cả các vết highlight cũ trước đó
+            const activeElements = document.querySelectorAll('.highlight-selected');
+            activeElements.forEach(el => el.classList.remove('highlight-selected'));
+
+            // Tìm và áp dụng hiệu ứng nổi bật cho selector mới chọn
+            const targetElements = document.querySelectorAll('#app ' + selectorString);
+            targetElements.forEach(el => el.classList.add('highlight-selected'));
+            
+            console.log(`Đã tìm thấy ${targetElements.length} phần tử khớp với cấu trúc: "${selectorString}"`);
+        }
+    </script>
+
+</body>
+</html>

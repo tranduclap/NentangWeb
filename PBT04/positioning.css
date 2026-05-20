@@ -1,0 +1,167 @@
+/* ==========================================
+   1. Cài đặt nền tảng chung
+   ========================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5f9;
+}
+
+/* Khoảng đệm đỉnh bằng chiều cao Header để nội dung không bị che khuất */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 20px 20px; 
+    display: flex;
+    gap: 20px;
+}
+
+/* ==========================================
+   2. Fixed Header (Cố định đỉnh trang)
+   ========================================== */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #0f172a; /* Xám đậm */
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000; /* Đảm bảo luôn nằm đè lên mọi phần tử khác khi cuộn */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* ==========================================
+   3. Sticky Sidebar (Dính khi cuộn)
+   ========================================== */
+.sticky-sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    
+    /* Thuộc tính cốt lõi tạo hiệu ứng dính */
+    position: sticky;
+    top: 80px; /* Cách mép trên màn hình một khoảng dưới Header */
+    height: fit-content; /* Chỉ cao vừa vặn nội dung để có không gian trượt */
+}
+
+.sticky-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sticky-sidebar li {
+    margin-bottom: 10px;
+}
+
+.sticky-sidebar a {
+    text-decoration: none;
+    color: #334155;
+}
+
+/* ==========================================
+   4. Product Cards & Absolute Badge
+   ========================================== */
+.content-area {
+    flex: 1;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    width: 260px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    
+    /* Điểm tựa tọa độ cho phần tử con absolute bên trong */
+    position: relative; 
+}
+
+/* Badge "HOT" hình tròn đỏ nằm ở góc phải trên */
+.badge-hot {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #dc2626; /* Màu đỏ */
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Bo tròn hoàn toàn */
+    
+    /* Căn chữ nằm chính giữa hình tròn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.product-image-placeholder {
+    height: 150px;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.scroll-spacer {
+    margin-top: 40px;
+    color: #64748b;
+    line-height: 4; /* Kéo giãn khoảng cách */
+}
+
+/* ==========================================
+   5. Fixed Scroll to Top Button
+   ========================================== */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #2563eb; /* Xanh dương */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    
+    /* Căn giữa icon mũi tên */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 999;
+}

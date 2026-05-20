@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positioning Playground - Lab</title>
+    <link rel="stylesheet" href="positioning.css">
+</head>
+<body>
+
+    <!-- Fixed Header -->
+    <header class="fixed-header">
+        <div class="logo">ShopTLU</div>
+        <nav class="nav-links">
+            <a href="#">Trang chủ</a>
+            <a href="#">Sản phẩm</a>
+            <a href="#">Liên hệ</a>
+        </nav>
+    </header>
+
+    <!-- Container chính chứa nội dung bên dưới Header -->
+    <div class="main-container">
+        
+        <!-- Sticky Sidebar -->
+        <aside class="sticky-sidebar">
+            <h3>Danh mục</h3>
+            <ul>
+                <li><a href="#">Điện thoại</a></li>
+                <li><a href="#">Máy tính bảng</a></li>
+                <li><a href="#">Laptop</a></li>
+                <li><a href="#">Phụ kiện</a></li>
+            </ul>
+        </aside>
+
+        <!-- Phân vùng nội dung chính (Tạo độ dài dài để scroll màn hình) -->
+        <main class="content-area">
+            <h2>Sản phẩm mới nhất</h2>
+            
+            <div class="product-grid">
+                <!-- Card sản phẩm có chứa Absolute Badge -->
+                <article class="product-card">
+                    <!-- Badge HOT nằm góc phải -->
+                    <span class="badge-hot">HOT</span>
+                    <div class="product-image-placeholder">iPhone 16 Pro</div>
+                    <h4>iPhone 16 Pro Max</h4>
+                    <p class="price">34.990.000đ</p>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-placeholder">MacBook M4</div>
+                    <h4>MacBook Pro M4</h4>
+                    <p class="price">45.990.000đ</p>
+                </article>
+
+                <article class="product-card">
+                    <span class="badge-hot">HOT</span>
+                    <div class="product-image-placeholder">Apple Watch 10</div>
+                    <h4>Apple Watch Series 10</h4>
+                    <p class="price">11.990.000đ</p>
+                </article>
+            </div>
+
+            <!-- Đoạn văn bản mẫu tạo không gian dài để cuộn chuột thử nghiệm -->
+            <div class="scroll-spacer">
+                <p>--- Cuộn chuột xuống để kiểm tra tính năng dính (Sticky/Fixed) ---</p>
+                <p>Nội dung bổ sung để kéo dài trang...</p>
+                <p>Nội dung bổ sung để kéo dài trang...</p>
+                <p>Nội dung bổ sung để kéo dài trang...</p>
+                <p>Nội dung bổ sung để kéo dài trang...</p>
+                <p>Nội dung bổ sung để kéo dài trang...</p>
+                <p>Nội dung bổ sung để kéo dài trang...</p>
+                <p>Nội dung bổ sung để kéo dài trang...</p>
+                <p>Nội dung bổ sung để kéo dài trang...</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Fixed Scroll to Top Button -->
+    <a href="#" class="scroll-to-top" aria-label="Cuộn lên đầu trang">↑</a>
+
+</body>
+</html>

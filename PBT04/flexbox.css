@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #334155;
+    padding-bottom: 50px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 0 40px;
+    height: 70px;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-menu li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.nav-auth {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #94a3b8;
+    background-color: transparent;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.section-title {
+    max-width: 1200px;
+    margin: 40px auto 20px auto;
+    padding: 0 20px;
+}
+
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.product-card {
+    flex: 0 0 calc(25% - 15px);
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-img {
+    height: 180px;
+    background-color: #f1f5f9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+.product-price {
+    color: #dc2626;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-buy {
+    margin-top: auto;
+    background-color: #1e293b;
+    color: #ffffff;
+    border: none;
+    padding: 10px 0;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
