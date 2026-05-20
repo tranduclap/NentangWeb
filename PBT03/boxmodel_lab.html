@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Lab - Thực Hành CSS</title>
+    <link rel="stylesheet" href="boxmodel.css">
+</head>
+<body>
+
+    <h1>PHẦN 1 — CHỨNG MINH CONTENT-BOX VS BORDER-BOX</h1>
+    <div class="p1-container">
+        <!-- Hộp 1: Sử dụng mặc định content-box -->
+        <div class="box box-content">
+            <p>Hộp 1: content-box</p>
+            <p>Width: 300px<br>Padding: 20px<br>Border: 5px</p>
+        </div>
+
+        <!-- Hộp 2: Sử dụng border-box -->
+        <div class="box box-border">
+            <p>Hộp 2: border-box</p>
+            <p>Width: 300px<br>Padding: 20px<br>Border: 5px</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h1>PHẦN 2 — LAYOUT 3 CỘT (CONTAINER 1000PX)</h1>
+    <!-- Container cố định 1000px -->
+    <div class="layout-container">
+        <!-- Cột trái (Sidebar) -->
+        <aside class="column col-left">
+            <h3>Cột Trái (Sidebar)</h3>
+            <p>Width gốc: 250px<br>Padding: 15px</p>
+        </aside>
+
+        <!-- Cột giữa (Content) -->
+        <main class="column col-center">
+            <h2>Cột Giữa (Main Content)</h2>
+            <p>Width gốc: 500px<br>Padding: 20px</p>
+            <p>Nội dung hiển thị chính của trang web nằm ở đây.</p>
+        </main>
+
+        <!-- Cột phải (Ads) -->
+        <aside class="column col-right">
+            <h3>Cột Phải (Ads)</h3>
+            <p>Width gốc: 250px<br>Padding: 15px</p>
+        </aside>
+    </div>
+
+</body>
+</html>

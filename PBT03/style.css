@@ -1,0 +1,134 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 15px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+ 
+nav ul li a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+nav ul li a.active {
+    color: #38bdf8;
+    border-bottom: 2px solid #38bdf8;
+    padding-bottom: 4px;
+}
+
+figure {
+    margin: 0 0 20px 0;
+    background-color: #ffffff;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    text-align: center;
+}
+
+figure img {
+    border-radius: 4px;
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #64748b;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #cbd5e1;
+}
+
+/* Header row: background đậm, text trắng */
+table thead tr {
+    background-color: #1e3c72;
+    color: #ffffff;
+}
+
+/* Zebra striping cho các dòng chẵn */
+table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Hover row: đổi màu nền khi di chuột qua */
+table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+table tfoot tr {
+    background-color: #f8fafc;
+    font-style: italic;
+    color: #64748b;
+}
+
+
+#contact {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #2a5298;
+}
+
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}

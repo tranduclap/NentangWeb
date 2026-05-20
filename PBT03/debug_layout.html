@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực nghiệm Sửa Lỗi Vỡ Layout</title>
+    <link rel="stylesheet" href="debug_layout.css">
+</head>
+<body>
+
+    <h1>MÔ PHỎNG SỬA LỖI LAYOUT KHÔNG BỊ RỚT DÒNG</h1>
+
+    <h2>Cách 1: Sử dụng thuộc tính border-box</h2>
+    <div class="container solution-border-box">
+        <div class="sidebar">Sidebar (300px)</div>
+        <div class="content">Content (660px) - Đã sửa lỗi bằng cách co cụm đệm</div>
+        <div class="clear"></div>
+    </div>
+
+    <br><hr><br>
+
+    <h2>Cách 2: Giữ nguyên content-box (Tính toán lại Width thủ công)</h2>
+    <div class="container">
+        <div class="sidebar fix-content-box-sidebar">Sidebar (Hạ width xuống 258px)</div>
+        <div class="content fix-content-box-content">Content (Hạ width xuống 598px)</div>
+        <div class="clear"></div>
+    </div>
+
+</body>
+</html>

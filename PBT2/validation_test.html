@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra HTML5 Validation</title>
+</head>
+<body>
+
+    <h1>Thử nghiệm thuộc tính Validation</h1>
+
+    <form action="#" method="GET">
+        
+        <p>
+            <strong>Trường hợp 1 (Để trống):</strong><br>
+            <input type="text" required value="">
+        </p>
+
+        <p>
+            <strong>Trường hợp 2 (Gõ "abc"):</strong><br>
+            <input type="email" value="abc">
+        </p>
+
+        <p>
+            <strong>Trường hợp 3 (Gõ 15):</strong><br>
+            <input type="number" min="1" max="10" value="15">
+        </p>
+
+        <p>
+            <strong>Trường hợp 4 (Gõ "abc123"):</strong><br>
+            <input type="text" pattern="[0-9]{10}" value="abc123">
+        </p>
+
+        <p>
+            <strong>Trường hợp 5 (Gõ "123"):</strong><br>
+            <input type="password" minlength="8" value="123">
+        </p>
+
+        <p>
+            <button type="submit">Submit Form</button>
+        </p>
+
+    </form>
+
+</body>
+</html>

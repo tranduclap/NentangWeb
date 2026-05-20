@@ -1,0 +1,75 @@
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    font-size: 1.4rem;
+    color: #333;
+}
+
+hr {
+    margin: 40px 0;
+    border: 0;
+    border-top: 2px dashed #ccc;
+}
+
+
+.p1-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.box {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid #1e3c72;
+    background-color: #e2e8f0;
+    font-weight: bold;
+}
+
+
+.box-content {
+    box-sizing: content-box;
+}
+
+
+.box-border {
+    box-sizing: border-box;
+}
+
+
+.layout-container {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    background-color: #ffffff;
+    border: 2px solid #333;
+}
+
+.column {
+    
+    box-sizing: border-box; 
+}
+
+.col-left {
+    width: 250px;
+    padding: 15px;
+    background-color: #ffedd5; /* Cam nhạt */
+}
+
+.col-center {
+    width: 500px;
+    padding: 20px;
+    background-color: #f1f5f9; /* Xám nhạt */
+}
+
+.col-right {
+    width: 250px;
+    padding: 15px;
+    background-color: #dbeafe; /* Xanh nhạt */
+}
+
