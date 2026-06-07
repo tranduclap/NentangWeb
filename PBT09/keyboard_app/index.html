@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Navigation & Accessibility App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Accessibility Gallery</h1>
+            <div class="shortcut-tip" aria-live="polite">
+                💡 <b>Mẹo phím tắt:</b> <kbd>←</kbd> <kbd>→</kbd> Chuyển ảnh | <kbd>1-4</kbd> Nhảy ảnh | <kbd>Space</kbd> Slideshow | <kbd>Ctrl + K</kbd> Mở Lệnh
+            </div>
+        </header>
+
+        <main class="gallery-section">
+            <div class="main-viewer" id="mainViewer" tabindex="0" aria-label="Khung xem ảnh chính lớn. Nhấn phím Mũi tên trái phải để chuyển hình." aria-roledescription="carousel">
+                <img id="activeImg" src="https://picsum.photos/800/500?random=101" alt="Hình ảnh thiên nhiên số 1">
+                <div class="slideshow-indicator" id="slideshowIndicator" aria-hidden="true">⏸️ Slideshow đang dừng</div>
+            </div>
+
+            <div class="thumbnail-list" id="thumbList" role="tablist" aria-label="Danh sách ảnh thu nhỏ">
+                <button class="thumb-btn active" data-index="0" role="tab" aria-selected="true" aria-label="Ảnh 1: Thiên nhiên 101">
+                    <img src="https://picsum.photos/150/100?random=101" alt="" aria-hidden="true">
+                    <span class="badge-num">1</span>
+                </button>
+                <button class="thumb-btn" data-index="1" role="tab" aria-selected="false" aria-label="Ảnh 2: Thiên nhiên 102">
+                    <img src="https://picsum.photos/150/100?random=102" alt="" aria-hidden="true">
+                    <span class="badge-num">2</span>
+                </button>
+                <button class="thumb-btn" data-index="2" role="tab" aria-selected="false" aria-label="Ảnh 3: Thiên nhiên 103">
+                    <img src="https://picsum.photos/150/100?random=103" alt="" aria-hidden="true">
+                    <span class="badge-num">3</span>
+                </button>
+                <button class="thumb-btn" data-index="3" role="tab" aria-selected="false" aria-label="Ảnh 4: Thiên nhiên 104">
+                    <img src="https://picsum.photos/150/100?random=104" alt="" aria-hidden="true">
+                    <span class="badge-num">4</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <div class="palette-overlay" id="paletteOverlay" role="dialog" aria-modal="true" aria-label="Hộp lệnh nhanh Command Palette" aria-hidden="true">
+        <div class="palette-box">
+            <div class="palette-input-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="paletteInput" placeholder="Nhập từ khóa để tìm lệnh (Ví dụ: xem, bat, tat)..." aria-label="Nhập từ khóa tìm kiếm lệnh hành động" autocomplete="off">
+                <span class="esc-badge">ESC để đóng</span>
+            </div>
+            <ul class="command-list" id="commandList" role="listbox" aria-label="Kết quả tìm kiếm lệnh hành động">
+                </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

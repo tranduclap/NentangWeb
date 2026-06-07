@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Đăng Ký - Form Validator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>ĐĂNG KÝ TÀI KHOẢN</h2>
+        <form id="registerForm">
+            
+            <div class="form-group">
+                <label for="fullName">Họ và tên</label>
+                <div class="input-wrapper">
+                    <input type="text" id="fullName" placeholder="Nhập từ 2 - 50 ký tự...">
+                    <span class="status-icon" id="nameIcon"></span>
+                </div>
+                <small class="error-msg" id="nameError">Tên phải nằm trong khoảng từ 2 đến 50 ký tự.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Địa chỉ Email</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" placeholder="example@domain.com">
+                    <span class="status-icon" id="emailIcon"></span>
+                </div>
+                <small class="error-msg" id="emailError">Định dạng Email không hợp lệ (Ví dụ: abc@gmail.com).</small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <div class="input-wrapper">
+                    <input type="password" id="password" placeholder="Nhập mật khẩu an toàn...">
+                    <span class="status-icon" id="passIcon"></span>
+                </div>
+                <div class="strength-meter">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <small class="strength-text" id="strengthText">Mật khẩu quá ngắn (Yêu cầu ≥ 8 ký tự).</small>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Xác nhận mật khẩu</label>
+                <div class="input-wrapper">
+                    <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu giống phía trên...">
+                    <span class="status-icon" id="confirmIcon"></span>
+                </div>
+                <small class="error-msg" id="confirmError">Mật khẩu xác nhận chưa trùng khớp.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <div class="input-wrapper">
+                    <input type="text" id="phone" placeholder="0901-234-567" maxlength="12">
+                    <span class="status-icon" id="phoneIcon"></span>
+                </div>
+                <small class="error-msg" id="phoneError">Số điện thoại phải bao gồm đúng 10 chữ số.</small>
+            </div>
+
+            <button type="submit" id="submitBtn" disabled>ĐĂNG KÝ NGAY</button>
+        </form>
+    </div>
+
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-box">
+            <h3>🎉 ĐĂNG KÝ THÀNH CÔNG!</h3>
+            <hr>
+            <div class="modal-body" id="modalData"></div>
+            <button class="modal-close-btn" id="modalCloseBtn">Đóng cửa sổ</button>
+        </div>
+    </div>
+
+    <script src="validator.js"></script>
+</body>
+</html>
