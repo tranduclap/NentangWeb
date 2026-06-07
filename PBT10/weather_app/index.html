@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather App</h1>
+            <p>Nhập tên thành phố để xem thời tiết hiện tại.</p>
+        </header>
+
+        <section class="search-panel">
+            <input id="cityInput" type="text" placeholder="Nhập thành phố..." />
+            <button id="searchBtn">Tìm</button>
+        </section>
+
+        <section id="status" class="status hidden"></section>
+
+        <section id="weatherCard" class="weather-card hidden">
+            <div class="weather-header">
+                <div>
+                    <h2 id="cityName"></h2>
+                    <p id="weatherDesc"></p>
+                </div>
+                <img id="weatherIcon" src="" alt="Icon thời tiết" />
+            </div>
+            <div class="weather-details">
+                <div>
+                    <strong>Nhiệt độ</strong>
+                    <span id="temperature"></span>
+                </div>
+                <div>
+                    <strong>Độ ẩm</strong>
+                    <span id="humidity"></span>
+                </div>
+                <div>
+                    <strong>Gió</strong>
+                    <span id="wind"></span>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-card">
+            <h3>Lịch sử tìm kiếm</h3>
+            <ul id="historyList"></ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

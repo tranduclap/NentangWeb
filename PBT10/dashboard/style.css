@@ -1,0 +1,104 @@
+:root {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+body {
+    margin: 0;
+}
+
+.dashboard {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 0.25rem 0 0;
+    color: #475569;
+}
+
+header button {
+    padding: 0.85rem 1.1rem;
+    border: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 0.85rem;
+    cursor: pointer;
+}
+
+.time-info {
+    color: #475569;
+    min-width: 180px;
+}
+
+.widgets {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.widget {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.widget h2 {
+    margin: 0;
+    padding: 1rem 1.25rem;
+    background: #eef2ff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.widget-body {
+    padding: 1.25rem;
+    min-height: 210px;
+}
+
+.widget-body.loading {
+    color: #2563eb;
+}
+
+.widget-body.error {
+    color: #b91c1c;
+}
+
+.widget-body ul {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+.widget-body img {
+    max-width: 100%;
+    border-radius: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 960px) {
+    .widgets {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .widgets {
+        grid-template-columns: 1fr;
+    }
+}

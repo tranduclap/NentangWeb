@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Directory</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>User Directory</h1>
+            <p>Quản lý người dùng bằng API JSONPlaceholder.</p>
+        </header>
+
+        <section class="toolbar">
+            <button id="createBtn">Thêm user mới</button>
+            <input id="searchInput" type="search" placeholder="Tìm theo tên hoặc email..." />
+        </section>
+
+        <section id="toast" class="toast hidden"></section>
+
+        <section id="userList" class="user-list"></section>
+
+        <section id="userFormPanel" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="formTitle">Tạo user mới</h2>
+                <form id="userForm">
+                    <label>
+                        Name
+                        <input id="nameInput" type="text" required />
+                    </label>
+                    <label>
+                        Email
+                        <input id="emailInput" type="email" required />
+                    </label>
+                    <label>
+                        Phone
+                        <input id="phoneInput" type="text" required />
+                    </label>
+                    <label>
+                        Website
+                        <input id="websiteInput" type="text" required />
+                    </label>
+                    <div class="form-actions">
+                        <button type="submit">Lưu</button>
+                        <button type="button" id="cancelBtn">Hủy</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
