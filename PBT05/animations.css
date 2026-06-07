@@ -1,0 +1,179 @@
+/* ==========================================================================
+   STRUCTURE & BASE STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  padding: 40px 20px;
+}
+
+.demo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+
+/* ==========================================================================
+   1. CARD HOVER EFFECT
+   ========================================================================== */
+.product-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  
+  /* Cấu hình Transition mượt mà theo yêu cầu */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Kích hoạt hiệu ứng bay lên và tăng bóng đổ khi Hover */
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================================================
+   2. BUTTON HOVER EFFECT
+   ========================================================================== */
+.card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.price {
+  color: #e74c3c;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.btn-buy {
+  background-color: #2c3e50;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  
+  /* Cấu hình transition đổi màu và kích thước mượt mà */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* Kích hoạt Button Hover: Đổi màu nền, màu chữ và scale nhẹ */
+.btn-buy:hover {
+  background-color: #e67e22;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+
+/* ==========================================================================
+   3. IMAGE ZOOM EFFECT
+   ========================================================================== */
+.img-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden; /* BẮT BUỘC: Giữ ảnh không tràn ra khỏi khung khi phóng to */
+  background-color: #eaeded;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  /* Đảm bảo ảnh phóng to thu nhỏ có chuyển động mượt */
+  transition: transform 0.4s ease;
+}
+
+/* Khi di chuột vào Card, kích hoạt phóng to ảnh bên trong */
+.product-card:hover .img-container img {
+  transform: scale(1.1);
+}
+
+
+/* ==========================================================================
+   4. LOADING SPINNER (Xoay vòng vô hạn)
+   ========================================================================== */
+.spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 10px;
+}
+
+.loading-spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid #f3f3f3;       /* Border nền màu nhạt */
+  border-top: 4px solid #3498db;   /* Thanh màu xoay chính */
+  border-radius: 50%;              /* Biến thành hình tròn */
+  
+  /* Kích hoạt Animation xoay đều vô hạn */
+  animation: spin 1s linear infinite;
+}
+
+/* Định nghĩa @keyframes spin xoay từ 0 đến 360 độ */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ==========================================================================
+   5. FADE-IN ON SCROLL/LOAD (Hiệu ứng xuất hiện tịnh tiến)
+   ========================================================================== */
+.fade-in-element {
+  /* Gắn animation fadeIn chạy 1 lần khi load trang/hiển thị */
+  animation: fadeIn 0.8s ease-out forwards;
+  
+  /* Tránh hiện tượng nháy element trước khi animation chạy */
+  opacity: 0; 
+}
+
+/* Kỹ thuật rải delay (stagger) giúp các Card xuất hiện tuần tự sinh động */
+.fade-in-element:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-element:nth-child(2) { animation-delay: 0.25s; }
+.fade-in-element:nth-child(3) { animation-delay: 0.4s; }
+.fade-in-element:nth-child(4) { animation-delay: 0.55s; }
+
+/* Định nghĩa @keyframes fadeIn chuyển đổi Opacity và dịch chuyển trục Y */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Bắt đầu ở vị trí thấp hơn 20px */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);    /* Trở về vị trí chuẩn */
+  }
+}
